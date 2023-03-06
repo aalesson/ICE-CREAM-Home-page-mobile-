@@ -1,0 +1,166 @@
+* {
+  margin: 0;
+  padding: 0;
+
+  box-sizing: border-box;
+}
+
+:root {
+  font-size: 62.5%; /* 10px */
+
+  --ff-heading-: 'Staatliches', sans-serif;
+  --ff-p: 'Palanquin', sans-serif;
+
+  --fc-primary: hsl(0, 0%, 100%);
+  --fc-secondary: hsl(274, 84%, 12%);
+  --fc-h2: hsl(232, 17%, 35%);
+
+  --bg-heading: hsl(218, 17%, 62%);
+  --bg-page: hsl(233, 100%, 97%);
+  --bg-line: hsl(275, 18%, 79%);
+  --bg-h2: hsl(312, 91%, 96%);
+
+  
+}
+
+.page {
+  width: 38.4rem;
+  height: 175.5rem;
+
+  margin: 0 auto 1rem auto;
+
+  background-color: var(--bg-page);
+}
+
+header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  width: 38.4rem;
+  height: 28.9rem;
+
+  margin: 0 auto;
+
+  background-color: var(--bg-heading);
+}
+
+header h1 {
+ font-family: var(--ff-heading-);
+ font-size: 4.0rem;
+ line-height: 3.4rem;
+ text-align: center;
+
+ color: var(--fc-primary);
+
+ margin: 0 auto;
+}
+
+.line {
+  display: inline-flex;
+  align-items: center;
+
+  width: 38.4rem;
+  height: 4.9rem;
+
+  background-color: var(--bg-line);
+}
+
+p {
+  font-family: var(--ff-p);
+  font-size: 2.0rem;
+  line-height: 1.5rem;
+
+  text-align: justify;
+  
+  margin: 14px auto 63px;
+  
+  color: var(--fc-secondary);
+}
+
+main {
+  display: grid;
+  gap: 3.2rem;
+
+  max-width: 32.0rem;
+  height: 1642px;
+
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+  height: auto;
+}
+
+#logo {
+  width: 13.7rem;
+  height: 13.7rem;
+
+  margin: 0 auto 4.0rem;
+}
+
+.card {
+  position: relative;
+  object-fit: cover;
+}
+
+.card img {
+  object-fit: cover;
+
+  transition: all 200ms;
+  filter: brightness(0.5);
+
+ animation-name: downtop;
+ animation-duration: 500ms;
+ animation-direction: reverse;
+}
+
+.card h2 {
+  display: flex;
+  flex-direction: column;
+ 
+  position: absolute;
+  top: 2.0rem;
+  right: 2.8rem;
+
+  font-family: var(--ff-heading-);
+  font-size: 2.0rem;
+  line-height: 3.4rem;
+  color: var(--fc-h2);
+  font-weight: 400;
+  align-items: center;
+
+  background-color: var(--bg-h2);
+  border-radius: 20px;
+
+  width: 10.2rem;
+  height: 3.5rem;
+
+  animation: topdown 900ms 350ms backwards;
+}
+
+.card img:hover {
+  transform: scale(1.1);
+  opacity: 0.4;
+}
+
+@keyframes downtop {
+  100% {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+}
+
+@keyframes topdown {
+  0% {
+    opacity: 0;
+    transform: translateY(-15px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
